@@ -1,5 +1,8 @@
 {
   "pages":[
+    "pages/Login/Login",
+    "pages/publish/publish",
+    "pages/me/me",
     "pages/index/index",
     "pages/logs/logs"
   ],
@@ -8,6 +11,32 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "微信万能墙",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#9B9B9B",
+    "selectedColor": "#7ED321",
+    "backgroundColor": "#F8F8F8",
+    "borderStyle": "black",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "assets/shouye.png",
+        "selectedIconPath": "assets/shouye1.png"
+      },
+      {
+        "pagePath": "pages/publish/publish",
+        "text": "对Ta表白",
+        "iconPath": "assets/jiahao2.png",
+        "selectedIconPath": "assets/jiahaoL.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我的",
+        "iconPath": "assets/me.png",
+        "selectedIconPath": "assets/me-active.png"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json"

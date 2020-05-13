@@ -1,0 +1,20 @@
+
+.page{
+  backgrundcolor: #F0F0F0;
+}
+/* .input_box{
+   margin: 20rpx 10rpx 10rpx 10rpx;
+    text-align: left;
+    width: 650rpx;
+    height: 300rpx;
+    line-height: 450rpx;
+    background-color: #F0F0F0
+} */
+.new-quick{
+   margin: 20rpx 10rpx 10rpx 10rpx;
+    text-align: left;
+    width: 650rpx;
+    height: 300rpx;
+    line-height: 450rpx;
+    background-color: #F0F0F0
+}

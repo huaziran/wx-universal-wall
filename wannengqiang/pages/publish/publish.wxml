@@ -1,0 +1,6 @@
+
+<view class="input_box">
+   
+   <input class="new-quick" value="{{ todo }}" placeholder="快速添加..." bindinput="inputTodo" bindconfirm="addTodo" auto-focus />
+
+</view>
