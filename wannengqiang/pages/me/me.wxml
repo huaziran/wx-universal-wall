@@ -1,2 +1,13 @@
 <!--pages/me/me.wxml-->
 <text>个人中心</text>
+<button bindtap="getshuju">获取数据</button>
+<input placeholder="输入id删除" bindinput="dslinput"></input>
+<button bindtap="shan">删除数据</button>
+<button bindtap="yunhanshu">云函数</button>
+
+
+<view wx:for="{{datayun1}}" wx:key="itme">
+  <view>昵称：{{item.name.nickName}}</view>
+  <view>国家：{{item.name.country}}</view>
+   <view>动态：{{item.text}}</view>
+</view>

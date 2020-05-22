@@ -1,1 +1,11 @@
-<view>微信万能墙</view>
+
+<block wx:for="{{dataList}}" wx:key="index"> 
+<image src="{{item.name.avatarUrl}}" class="imgtop"></image>
+<view>名称：{{item.name.nickName}}</view>
+<view>动态：{{item.text}}</view>
+<image src="{{dianzanUrl}}" bindtap="dianzantop" class="img"></image><text>{{index}}</text>
+<image src="{{shoucangUrl}}" bindtap="shoucangtop" class="img"></image><text>{{scindex}}</text>
+<view>-------------</view>
+ </block>
+
+

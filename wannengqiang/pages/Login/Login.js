@@ -5,6 +5,9 @@ Page({
     canIUse: wx.canIUse('button.open-type.getUserInfo')
   },
   onLoad: function () {
+    wx.showLoading({
+      title: '加载中...',
+    })
     var that = this;
     // 查看是否授权
     wx.getSetting({
@@ -13,6 +16,9 @@ Page({
           wx.getUserInfo({
             success: function (res) {
               //从数据库获取用户信息
+              console.log(res);
+              //将信息转入全局变量
+              getApp().globalData.userInfo = res.userInfo
               that.queryUsreInfo();
               //用户已经授权过
               wx.switchTab({
@@ -23,9 +29,13 @@ Page({
         }
       }
     })
+
+    setTimeout(function(){
+      wx.hideLoading()
+    },1000)
   },
   bindGetUserInfo: function (e) {
-    console.log(e)
+     console.log(e);
     if (e.detail.userInfo) {
       //用户按了允许授权按钮
       var that = this;
@@ -78,7 +88,7 @@ Page({
         'content-type': 'application/json'
       },
       success: function (res) {
-        console.log(res.data);
+        console.log(res);
         getApp().globalData.userInfo = res.data;
       }
     }) 
