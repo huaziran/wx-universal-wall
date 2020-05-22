@@ -37,7 +37,8 @@ Page({
 
   },
   onLoad: function() {
-    let that = this
+    let that = this;
+    // let time = Date.parse(new Date());//时间戳
     // 1. 获取数据库引用
     db.collection('yunimg').get({
       success: function(res) {
@@ -54,4 +55,18 @@ Page({
       }
     })
   },
+  //下拉刷新
+  onPullDownRefresh: function () {
+    wx.showNavigationBarLoading() //在标题栏中显示加载
+    //模拟加载
+    setTimeout(function () {
+      
+      // complete
+      wx.hideNavigationBarLoading() //完成停止加载
+      wx.stopPullDownRefresh() //停止下拉刷新
+    }, 1500);
+  },
+  onShow:function(){
+    this.onLoad()
+  }
 })

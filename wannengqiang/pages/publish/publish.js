@@ -38,8 +38,6 @@ Page({
   },
 
   bintbtn: function() {
-    console.log("数据", app.globalData.userInfo)
-    
     var that = this
     wx.showLoading({
       title: '提交中',
@@ -69,6 +67,10 @@ Page({
     Promise.all(promiseArr).then(res => {
       db.collection('yunimg').add({
           data: {
+            dianzan: false,
+            shoucang: false,
+            pinglun: [],
+            time: that.getNowFormatDate(),
             name: app.globalData.userInfo,
             text: that.data.detail,
             fileIDs: this.data.fileIDs //只有当所有的图片都上传完毕后，这个值才能被设置，但是上传文件是一个异步的操作，你不知道他们什么时候把fileid返回，所以就得用promise.all
@@ -101,6 +103,22 @@ Page({
       urls: that.data.tempFilePaths,
     })
   },
+  //获取当前时间，返回时间格式：2020-05-22 21:14:22
+  getNowFormatDate: function() {
+    var date = new Date();
+    var seperator1 = "-";
+    var seperator2 = ":";
+    var month = date.getMonth() + 1;
+    var strDate = date.getDate();
+    if (month >= 1 && month <= 9) {
+      month = "0" + month;
+    }
+    if (strDate >= 0 && strDate <= 9) {
+      strDate = "0" + strDate;
+    }
+    var currentdate = date.getFullYear() + seperator1 + month + seperator1 + strDate + " " + date.getHours() + seperator2 + date.getMinutes() + seperator2 + date.getSeconds();
+    return currentdate;
+  },
   //长按删除图片
   DeleteImg: function(e) {
     var that = this;
@@ -127,7 +145,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-         
+
   },
 
   /**
