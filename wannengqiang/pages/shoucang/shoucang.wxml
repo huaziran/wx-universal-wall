@@ -1,0 +1,35 @@
+<!--pages/shoucang/shoucang.wxml-->
+	<view class="divLine"></view>
+<view wx:for="{{topics}}" wx:key="index" wx:for-item="lightList" wx:for-index="index1">
+	<view data-item="{{lightList}}" bindtap="huoquid">
+		<view class="box">
+			<view class="header">
+				<image wx:if="{{lightList.qiangqiangurl}}" src="{{lightList.qiangqiangurl}}" class="imgtop"></image>
+				<image wx:else src="{{lightList.userInfo.avatarUrl}}" class="imgtop"></image>
+				<image hidden="ture" src="{{lightList.userInfo.avatarUrl}}" class="imgtop"></image>
+			</view>
+			<view class="nc">
+				<view wx:if="{{lightList.qiangqiangname}}" style="font-size:30rpx;">{{lightList.qiangqiangname}}</view>
+				<view wx:else>{{lightList.userInfo.nickName}}</view>
+				<view hidden="ture">{{lightList.userInfo.nickName}}</view>
+				<view style="font-size:20rpx;">{{lightList.time}}</view>
+			</view>
+		</view>
+		<view class="boxs">{{lightList.text}}</view>
+		<view class="imgeFileIDs1">
+			<view wx:for="{{lightList.fileIDs}}" wx:for-item="image" wx:for-index="index" wx:key="img" class="imgeFileIDs2">
+				<image src='{{image}}' class="imgesFileIDs" data-image='{{lightList.fileIDs}}' data-index='{{index}}' bindtap='previewImage'></image>
+			</view>
+		</view>
+		<view class="yemian">
+	
+		<image class="qw" src="../../assets/demo.png" style="width:50rpx;height:50rpx;" data-item="{{lightList}}" bindtap="huoquid"></image>
+		<view wx:if="{{lightList.dianzanshu!==0}}" class="dianzanshu">
+			<text>{{lightList.dianzanshu}}</text>
+		</view>
+		<image class="img" src="../../assets/aixin1.png" data-item="{{lightList}}" bindtap="huoquid"></image>
+	</view>
+	</view>
+	<view class="divLine"></view>
+
+</view>

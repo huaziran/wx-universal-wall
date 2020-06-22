@@ -1,23 +1,8 @@
-<!-- <view class="input_box">
-  <textarea placeholder="对Ta表白" placeholder-class="fots" class="textinput" maxlength="-1" bindinput="bind_text"></textarea>
-</view>
 
-<view class="image">
-  <view class="img" wx:for="{{tempImg}}" wx:key="itme">
-      <image mode='aspectFill' class='imge' src='{{itme}}' data-presrc="{{itme}}" bindtap='previewImg'/>
-  </view>
-  <view bindtap="uploadimg" class="img">
-    <image src="../../assets/jiahaoL.png" class="upImgArr" data-type="image"></image>
-  </view>
-</view>
-
-<view class="btn" id="btnid" bindtap="bintbtn">发送</view> -->
-
-<!-- <image src="{{imgid}}" style="width: 150rpx; height: 150rpx;"></image> -->
 
 
 <view class="input_box">
-  <textarea placeholder="对Ta表白" placeholder-class="fots" class="textinput" maxlength="-1" bindinput="bind_text"></textarea>
+  <textarea placeholder="白茶清欢无别事，我在等风也等你......"  placeholder-class="fots" class="textinput" maxlength="-1" bindinput="bind_text"></textarea>
 </view>
 <!--以下为图片选择-->
 <view class="img_box">
@@ -27,11 +12,12 @@
   <view class="imgs">
     <view class="images" bindtap="uploadimg">
       <!--这里自行创建image文件夹，并添加choose.png，及中部加号-->
-     <image src='../../assets/jiahaoL.png' mode='widthFix'/>
+     <image style="  width:100%; height:100%;" src='../../assets/xiangji.png' mode='widthFix'/>
     </view>
   </view>
 </view>
 <!--以下为上传按钮，可自行借鉴-->
 <view class="UploadBtnarea">
   <view class="btn" id="btnid" bindtap="bintbtn">发送</view>
+   <view class="btn1" id="btnid" bindtap="qiangqiang">墙墙发送</view>
 </view>

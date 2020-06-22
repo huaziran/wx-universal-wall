@@ -1,0 +1,20 @@
+<!--pages/advance/advance.wxml-->
+<view class="content">
+
+<view style="color:red;font-size:30rpx;text-align: center;" class="tishi">说出您宝贵的意见，我们才能更好的改进哦！！！</view>
+  <form bindsubmit="formSubmit">
+    <view class="text-content">
+      <view class='input-content'>
+        <input placeholder="写个标题~"  value="{{title}}" bindblur='getTextAreaTitle' />
+      </view>
+      <view class='text-area'>
+        <textarea name="input-content" type="text" placeholder="输入详细描述~" value="{{textContent}}" bindblur='getTextAreaContent'></textarea>
+      </view>
+    </view>
+
+    <view class='btn-func'>
+      <button class="btn" formType='submit' open-type="getUserInfo">提交意见</button>
+    </view>
+  </form>
+
+</view>

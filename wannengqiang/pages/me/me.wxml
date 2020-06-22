@@ -1,13 +1,91 @@
 <!--pages/me/me.wxml-->
-<text>个人中心</text>
-<button bindtap="getshuju">获取数据</button>
-<input placeholder="输入id删除" bindinput="dslinput"></input>
-<button bindtap="shan">删除数据</button>
-<button bindtap="yunhanshu">云函数</button>
+
+	<view class='amountBg' style="background-image: url('/../../images/timg1.jpg');background-repeat:no-repeat; background-size:100% 100%;-moz-background-size:100% 100%;">
+		<view class='img'>
+			<open-data type="userAvatarUrl"></open-data>
+		</view>
+		<view class='account'>
+			<view class='nick-name'>
+				<open-data type="userNickName" lang="zh_CN"></open-data>
+			</view>
+			<view class='address'>
+				<open-data type="userCountry" lang="zh_CN"></open-data>·
+				<open-data type="userProvince" lang="zh_CN"></open-data>·
+				<open-data type="userCity" lang="zh_CN"></open-data>
+			</view>
+		</view>
+	</view>
+
+	<!-- 底部列表 -->
+	<view class='content'>
+		<!-- 收藏列表 -->
+		<view class='line'></view>
+		<view class='item' bindtap='onCollectClick' style="color:#C301FF">
+			<view class='icon'>
+				<image src='../../images/me/collect.png' style="width:22px;height:21px;"></image>
+			</view>
+			<view class='itemName'>
+				<view>收藏列表</view>
+			</view>
+			<view class='right'>></view>
+		</view>
+
+		<!-- 发布历史 -->
+		<view class='hr'></view>
+		<view class='item' bindtap='onHistoryClick' style="color:#11F3C5">
+			<view class='icon'>
+				<image src='../../images/me/history.png' style="width:22px;height:21px;"></image>
+			</view>
+			<view class='itemName'>
+				<view>发布历史</view>
+			</view>
+			<view class='right'>></view>
+		</view>
+		<!-- 邀请好友 -->
+		<view class='line'></view>
+
+		<!-- <view class='item'>
+		<view class='icon'>
+			<image src='../../images/me/invitation.png' style="width:22px;height:21px;"></image>
+		</view>
+		<view class='itemName'>
+			<view>邀请好友</view>
+		</view>
+		<view class='right' bindtap='clickInvitivation'>
+			<text class='opr'>一起来玩~</text>></view>
+	</view> -->
+
+		<view class='hr'></view>
+		<!-- 产品意见 -->
+		<view class='item' bindtap='onAdvanceClick' style="color:#6D59D1">
+			<view class='icon'>
+				<image src='../../images/me/advice.png' style="width:22px;height:21px;"></image>
+			</view>
+			<view class='itemName'>
+				<view>产品意见</view>
+			</view>
+			<view class='right'>></view>
+		</view>
+		<view class='hr'></view>
+
+	</view>
 
 
-<view wx:for="{{datayun1}}" wx:key="itme">
-  <view>昵称：{{item.name.nickName}}</view>
-  <view>国家：{{item.name.country}}</view>
-   <view>动态：{{item.text}}</view>
-</view>
+
+
+
+
+
+
+<!-- <view>我的动态</view>
+<view>
+	<view wx:for="{{datayun}}" wx:key="index" wx:for-item="lightList" wx:for-index="index1">
+		<view>昵称：{{lightList.name.nickName}}</view>
+		<view>国家：{{lightList.name.country}}</view>
+		<view>动态：{{lightList.text}}</view>
+		<view>-------------------</view>
+	</view>
+</view> -->
+
+
+<!-- <button bindtap="getshuju">获取数据</button>   -->

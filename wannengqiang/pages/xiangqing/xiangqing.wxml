@@ -1,0 +1,57 @@
+<!--pages/xiangqing/xiangqing.wxml-->
+<!-- 动态展示 -->
+<view class="bgaq">
+
+	<view class="box">
+		<view class="header">
+			<image wx:if="{{dataList2.qiangqiangurl}}" src="{{dataList2.qiangqiangurl}}" class="imgtop"></image>
+			<image wx:else src="{{dataList2.userInfo.avatarUrl}}" class="imgtop"></image>
+		</view>
+		<view class="nc">
+			<view wx:if="{{dataList2.qiangqiangname}}" style="font-size:55rpx;">{{dataList2.qiangqiangname}}</view>
+			<view wx:else>{{dataList2.userInfo.nickName}}</view>
+			<view style="font-size:26rpx;">{{dataList2.time}}</view>
+		</view>
+	</view>
+	<view class="boxs">{{dataList2.text}}</view>
+	<view class="imgeFileIDs1">
+		<view wx:for="{{dataList2.fileIDs}}" wx:for-item="image" wx:for-index="index" wx:key="img" class="imgeFileIDs2" data-image='{{lightList.fileIDs}}'>
+			<image src="{{image}}" class="imgesFileIDs" data-index='{{index}}' bindtap='previewImg' data-src="{{image}}" data-list="{{image}}"></image>
+		</view>
+		<!-- style="width:200rpx;height:200rpx"  -->
+	</view>
+	<view class="hangxian"></view>
+	<view class="yemian">
+		<view wx:if="{{dianzanshu!==0}}" class="dianzanshu">
+			<image class="img1" src="../../assets/aixin3.png"></image>
+			<text class="z1">{{dianzanshu}}人觉得很赞</text>
+		</view>
+		<!-- 点赞-->
+		<view class='like-container' wx:if='{{isLikedianzan}}'>
+			<image class="img" src="../../assets/aixin5.png" bindtap="onLikeDianzan"></image>
+		</view>
+		<view class='like-container' wx:else>
+			<image class="img" src="../../assets/aixin8.png" bindtap="onLikeDianzan"></image>
+		</view>
+		<!-- 收藏 -->
+		<view class='like-container' wx:if='{{isLike}}'>
+			<image class='img' src='../../assets/shoucang1.png' bindtap='onLikeClick'></image>
+		</view>
+		<view class='like-container' wx:else>
+			<image class='img' src='../../assets/shoucang2.png' bindtap='onLikeClick'></image>
+		</view>
+	</view>
+
+	<!-- 评论 -->
+	<view class="abc">
+		<view wx:for="{{pinglun1}}" wx:key="item" class="zitidaxiao">
+			<view style="color:#2177C7">{{item.name}}： <text style="color:#000">{{item.content}}</text></view>
+		</view>
+	</view>
+</view>
+ 
+ <view class="kuang"></view>
+<view class="l">
+	<input placeholder="请输入评论" bindinput="pinglunInput" class="input1" value="{{content}}"></input>
+	<view class="btn" formType='submit' open-type="getUserInfo" bindtap="fabiao">发表</view>
+</view>

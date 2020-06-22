@@ -1,0 +1,6 @@
+/* pages/Loginguide/Loginguide.wxss */
+
+.kong{
+
+  height: 100rpx;
+}

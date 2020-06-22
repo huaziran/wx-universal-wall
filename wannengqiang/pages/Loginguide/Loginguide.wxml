@@ -1,0 +1,38 @@
+<!--pages/Loginguide/Loginguide.wxml-->
+
+<view style="font-size:40rpx;color:#00B26A">功能介绍</view>
+<view>
+	<view>
+		<text>1.	表白墙欢迎真心表白、寻人寻物等，但拒绝小广告或者不文明词句哦！请大家一起维护表白墙，让它成为大家倾吐心事的一片净土。</text>
+	</view>
+	<view>
+		<text>2.	墙墙真心希望能有更多的小伙伴通过表白墙找到自己的幸福并牢牢抓住，希望你们都能勇敢些。毕竟主动点，你们就可能有故事。</text>
+	</view>
+	<view>
+		<text>3.	墙墙欢迎大胆的你“自荐”，也欢迎“忧国忧民”的你为室友发声。勇敢点，说不定真爱就在眼前。</text>
+	</view>
+	<view>
+		<text> 4.	卖舍友拒绝黑照以及不文明的语言哦，希望大家都能尊重他人。</text>
+	</view>
+	<view>
+		<text> 5.	希望还未找到幸福的你，能够通过墙墙，找到你丢失的那一半，并且小心爱护，牵手一直走下去。</text>
+	</view>
+</view>
+<view style="font-size:40rpx;color:red" class="zhuyi">注意</view>
+<view>
+	<view>
+		<text>1、我们小程序需要获取你的微信头像、微信名称、出身地区，以便您更好的发表表白动态。</text>
+	</view>
+	<view>
+		<text>2、你的头像、名称、将会被此小用户看到。</text>
+	</view>
+	<view>
+		<text>3、此小程序现在只限凯里学院学生使用</text>
+	</view>
+	<view>
+		<text>4、如果您同意使用我们此小程序，可点击下方同意登录按钮进行授权登录！</text>
+	</view>
+
+</view>
+<view class="kong"></view>
+<button type="primary" bindtap="denglu">同意登录</button>

@@ -2,10 +2,11 @@
 const cloud = require('wx-server-sdk')
 
 cloud.init({
-  env: 'wang-czevh'
+  env: cloud.DYNAMIC_CURRENT_ENV
 })
 
 // 云函数入口函数
 exports.main = async (event, context) => {
-  return cloud.database().collection("imagelist").get();
+  return await cloud.database().collection("yunimg").doc(event.openid)
+  .get();
 }

@@ -1,0 +1,209 @@
+/* pagesngqingngqing.wxss */
+
+.bgaq{
+ width: 100%;
+ width: 90%;
+ position: relative;
+ left: 0rpx;
+ right: 0rpx;
+ top: 0rpx;
+ bottom: 20rpx;
+}
+
+.imgtop {
+  width: 110rpx;
+  height: 110rpx;
+}
+
+.img {
+  width: 70rpx;
+  height: 70rpx;
+  margin: 30rpx;
+}
+.img1{
+  width: 60rpx;
+  height: 60rpx;
+  margin-left: 20rpx;
+}
+
+/* .imgeFileIDs1 {
+  width: 94%;
+  height: 100%;
+  margin-left: 3%;
+  margin-right: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  margin-top: 40rpxrpx;
+  flex-flow: row wrap;
+  align-content: space-around;
+}
+
+.imgeFileIDs2 {
+ margin-right: 10rpx;
+ width: 200rpx;
+ height: 200rpx;
+}
+
+.imgesFileIDs {
+  width: 200rpx;
+  height: 200rpx;
+} */
+.imgeFileIDs1 {
+  width: 94%;
+  height: auto;
+  margin-left: 3%;
+  margin-right: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  flex-flow: row wrap;
+  align-content: space-around;
+  margin-top: 30rpx;
+  margin-bottom: 30rpx;
+}
+
+.imgeFileIDs2 {
+  width:180rpx;
+  height: 180rpx;
+  border: 5rpx solid #c3c3c3;
+  margin-right: 10rpx;
+  margin-left: 10rpx;
+  margin-top: 10rpx;
+  position: relative;
+  top: 20rpx;
+}
+
+.imgesFileIDs {
+  width:180rpx;
+  height: 180rpx;
+}
+
+.dianzanshu {
+  padding-top: 20rpx;
+  margin-left: 10rpx;
+  margin-right: 40rpx;
+  top: 50rpx;
+}
+
+.input {
+  border: 2px solid #E6E6E6;
+  margin-top: 5rpx;
+  margin-bottom: 5rpx;
+}
+
+.header {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 110rpx;
+  height: 110rpx;
+  position: relative;
+  background: yellow;
+  left: 20rpx;
+  top: 5rpx;
+}
+
+.box {
+  display: flex;
+  width: 100%;
+  height: auto;
+  position: relative;
+  top: 20rpx;
+  margin-bottom: 20rpx;
+}
+
+.nc {
+  position: relative;
+  left: 62rpx;
+  top: 5rpx;
+}
+
+.boxs {
+  width: 90%;
+  height: auto;
+  text-align: left;
+  margin-top: 60rpx;
+  margin-bottom: 30rpx;
+}
+.yemian{
+  width:96%;
+  margin: 10rpx;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  margin-top: 20rpx;
+  }
+
+.like-container {
+  margin-right: 10rpx;
+  padding-right:5rpx ;
+}
+
+.btn {
+  width: 25%;
+  height: 60rpx;
+  border-radius: 30rpx;
+  background-color: rgb(161, 227, 235);
+  text-align: center;
+  color: white;
+  padding-top: 30rpx;
+}
+.input1{
+  width: 70%;
+  height: 70rpx;
+  justify-content: center;
+  border: 2rpx solid #E6E6E6;
+  margin: 10rpx;
+  background-color:#fff;
+}
+.zitidaxiao{
+ font-size: 30rpx;
+}
+
+
+.z1{
+position: relative;
+margin: 10rpx;
+font-size: 30rpx;
+}
+.hangxian{
+  background: rgb(243, 245, 241);
+  width: 100%;
+  height: 10rpx;
+  margin: 10rpx;
+}
+.p1{
+  width: 100%;
+  color:#5EE65E;
+  font-size: 40rpx;
+  position: relative;
+  top: 40rpx;
+  margin: 20rpx;
+}
+.zitidaxiao{
+margin-bottom: 10rpx;
+}
+
+.abc{
+  position: relative;
+  top: 20rpx;
+  width: 100%;
+  height: auto;
+  margin-top: 0rpx;
+}
+.kuang{
+
+   width: 100%;
+   height:160rpx;
+
+}
+.l{
+  background-color: rgb(233, 233, 224);
+  position: fixed;
+  width: 100%;
+  bottom: 0rpx;
+  display: flex;
+  width: 100%;
+}

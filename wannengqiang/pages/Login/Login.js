@@ -1,67 +1,125 @@
-const app = getApp();
+const app = getApp()
+const db = wx.cloud.database();
+let id = ''
 Page({
   data: {
     //判断小程序的API，回调，参数，组件等是否在当前版本可用。
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    // isshouquan:true
   },
   onLoad: function () {
-    wx.showLoading({
-      title: '加载中...',
-    })
-    var that = this;
+    let that = this
     // 查看是否授权
     wx.getSetting({
       success: function (res) {
         if (res.authSetting['scope.userInfo']) {
-          wx.getUserInfo({
-            success: function (res) {
-              //从数据库获取用户信息
-              console.log(res);
-              //将信息转入全局变量
-              getApp().globalData.userInfo = res.userInfo
-              that.queryUsreInfo();
-              //用户已经授权过
-              wx.switchTab({
-                url: '/pages/index/index'
-              })
+          //用户已经授权过
+          // that.setData({
+          //   isshouquan:false
+          // })
+          wx.showModal({
+            title: '提示',
+            content: "登录成功",
+                     showCancel: false,
+            complete() {
+              db.collection('userInfo')
+                .where({
+                  _openid: id
+                })
+                .get({
+                  success: function (res) {
+                    console.log("获取用户数据成功", res)
+                    getApp().globalData.userInfo = res.data[0].userInfo;
+                    if (app) {
+                      wx.switchTab({
+                        url: '/pages/index/index'
+                      })
+                    } else {
+                      wx.hideToast({
+                        title: '加载中'
+                      })
+                    }
+                  },
+                  fail: function (res) {
+                    console.log("获取用户数据失败", res)
+                  }
+                })
             }
-          });
+          })
         }
       }
     })
 
-    setTimeout(function(){
+    wx.cloud.callFunction({
+      name: 'add',
+      success(res) {
+        console.log("获取云数据id成功", res)
+        getApp().globalData.openId = res.result.openid
+        id = res.result.openid
+      },
+      fail(res) {
+        console.log("获取数据失败", res)
+      }
+
+    })
+
+    setTimeout(function () {
       wx.hideLoading()
-    },1000)
+    }, 1000)
   },
+
+
   bindGetUserInfo: function (e) {
-     console.log(e);
+    console.log(e);
     if (e.detail.userInfo) {
-      //用户按了允许授权按钮
-      var that = this;
-      //插入登录的用户的相关信息到数据库
-      wx.request({
-        url: app.globalData.urlPath + 'user/add',
+
+      db.collection('userInfo').add({
         data: {
-          openid: getApp().globalData.openid,
-          nickName: e.detail.userInfo.nickName,
-          avatarUrl: e.detail.userInfo.avatarUrl,
-          province: e.detail.userInfo.province,
-          city: e.detail.userInfo.city
-        },
-        header: {
-          'content-type': 'application/json'
-        },
-        success: function (res) {
-          //从数据库获取用户信息
-          that.queryUsreInfo();
-          console.log("插入小程序登录用户信息成功！");
+          userInfo: e.detail.userInfo
         }
-      });
-      //授权成功后，跳转进入小程序首页
-      wx.switchTab({
-        url: '/pages/index/index'
       })
+        .then(res => {
+          console.log("上传个人信息成功", res)
+        })
+        .catch(res => {
+          console.log("上传个人信息失败", res)
+        })
+
+   
+
+      wx.showModal({
+        title: '提示',
+        content: "登录成功",
+        showCancel: false,
+
+        complete() {
+          db.collection('userInfo')
+            .where({
+              _openid: id
+            })
+            .get({
+              success: function (res) {
+                console.log("获取用户数据成功", res)
+                getApp().globalData.userInfo = res.data[0].userInfo;
+                if (app) {
+                  wx.switchTab({
+                    url: '/pages/index/index'
+                  })
+                } else {
+                  wx.hideToast({
+                    title: '加载中'
+                  })
+                }
+              },
+              fail: function (res) {
+                console.log("获取用户数据失败", res)
+              }
+            })
+
+        }
+
+      })
+
     } else {
       //用户按了拒绝按钮
       wx.showModal({
@@ -76,22 +134,13 @@ Page({
         }
       })
     }
+
   },
-  //获取用户信息接口
-  queryUsreInfo: function (e) {  
-    wx.request({
-      url: app.globalData.urlPath + 'user/userInfo',
-      data: {
-        openid: app.globalData.openid
-      },
-      header: {
-        'content-type': 'application/json'
-      },
-      success: function (res) {
-        console.log(res);
-        getApp().globalData.userInfo = res.data;
-      }
-    }) 
+
+  onShow: function () {
+    //  this.queryUsreInfo()
+    this.onLoad()
   },
+
 
 })

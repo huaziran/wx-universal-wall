@@ -1,0 +1,105 @@
+
+/**index.wxss**/
+
+.imgtop {
+  width: 80rpx;
+  height: 80rpx;
+}
+
+.img {
+  width: 50rpx;
+  height: 50rpx;
+  padding-right: 20rpx;
+}
+
+.imgeFileIDs1 {
+  width: 94%;
+  height: auto;
+  margin-left: 3%;
+  margin-right: 3%;
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  align-items: center;
+  flex-flow: row wrap;
+  align-content: space-around;
+  margin-bottom: 20rpx;
+}
+
+.imgeFileIDs2 {
+  width:150rpx;
+  height: 150rpx;
+  border: 5rpx solid #c3c3c3;
+  margin-right: 5rpx;
+  margin-left: 5rpx;
+ 
+}
+
+.imgesFileIDs {
+  width: 150rpx;
+  height: 150rpx;
+}
+.yemian{
+  width:96%;
+  margin: 10rpx;
+  display: flex;
+  /*row 横向  column 列表  */
+  flex-direction: row;
+  direction:rtl;
+  position: relative;
+  top: 20rpx;
+  bottom: 40rpx;
+  margin-bottom: 20rpx;
+  }
+  .qw{
+    margin-right: 10rpx;
+  }
+  
+.divLine{
+  background: rgb(243, 245, 241);
+  width: 100%;
+  height: 30rpx;
+  margin: 10rpx;
+  margin-top: 30rpx;
+} 
+
+.header {
+  border-radius: 50%;
+  overflow: hidden;
+  width: 80rpx;
+  height: 80rpx;
+  background: yellow;
+
+}
+ 
+.userInfo {
+  border-radius: 50%;
+  width: 120rpx;
+  height: 120rpx;
+}
+.box{
+display: flex;
+ width: 100%;
+ height: auto;
+
+ top: 20rpx;
+ margin-bottom: 20rpx;
+}
+.nc{
+  position: relative;
+  left:50rpx;
+}
+.boxs{
+   width: 90%;
+   margin:3% ;
+   height: auto;
+   text-align: left;
+  }
+.dianzanshu{
+  margin-right: 20rpx;
+  margin-left: 20rpx;
+  padding-top: 5rpx;
+}
+
+
+
